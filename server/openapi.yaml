@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Paw5 REST API
+  description: This API allows the use of the Paw5 backend database. For internal use only.
+  version: 0.0.1
+paths:
+  /users:
+    get:
+      description: Returns an array of all stored user records
+      summary: Get all users
+      responses:
+        '200':
+          description: An array of all users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user'
+  /users/{userId}:
+    get:
+      description: Returns stored information about a single user, defined by their User ID
+      summary: Get a user by ID
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            pattern: $[a-f0-9]{24}^
+          description: User ID to get information of
+          required: true
+      responses:
+        '200':
+          description: A record of a user's information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '404':
+          description: No record found with that user ID
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        _id:
+          type: string
+          pattern: $[a-f0-9]{24}^
+        name:
+          type: string
+      
