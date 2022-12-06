@@ -7,6 +7,11 @@ import SearchBar from '../components/SearchBarServ';
 import lstyles from '../constants/Styles';
 import dstyles from '../constants/DarkStyles';
 import ServNode from '../components/ServiceNode';
+import ServNode1 from '../components/ServiceNode1';
+import ServNode2 from '../components/ServiceNode2';
+import ServNode3 from '../components/ServiceNode3';
+import ServNode4 from '../components/ServiceNode4';
+import ServNode5 from '../components/ServiceNode5';
 
 export default function ServicesTab() {
   const [styles, setStyles] = useState(lstyles);
@@ -31,14 +36,11 @@ export default function ServicesTab() {
           style={{ marginBottom: Platform.OS === 'android' ? 170 : 190 }}
         >
           <ServNode />
-          <ServNode />
-          <ServNode />
-          <ServNode />
-          <ServNode />
-          <ServNode />
-          <ServNode />
-          <ServNode />
-          <ServNode />
+          <ServNode1 />
+          <ServNode2 />
+          <ServNode3 />
+          <ServNode4 />
+          <ServNode5 />
         </ScrollView>
       </View>
     </View>
