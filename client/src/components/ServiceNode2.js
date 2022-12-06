@@ -7,7 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import lstyles, { pawGreen, pawPink, pawGrey } from '../constants/Styles';
 import dstyles, { pawYellow } from '../constants/DarkStyles';
 
-const miso = require('../../assets/servImages/unt.png');
+const miso = require('../../assets/servImages/JarettsvilleVet.jpg');
 
 export default function ServNode() {
   const [styles, setStyles] = useState(lstyles);
@@ -40,8 +40,8 @@ export default function ServNode() {
 
           </View>
         </View>
-        <Text style={styles.servHeader}>UNT</Text>
-        <Text style={styles.servHeader2}>University</Text>
+        <Text style={styles.servHeader}>Jarettsville Vet</Text>
+        <Text style={styles.servHeader2}>Veterinary Clinic</Text>
         <Feather
           name="star"
           size={20}
@@ -83,7 +83,10 @@ export default function ServNode() {
             marginRight: 10,
           }}
         />
-        <Text style={styles.servHeader2}>We go here c:</Text>
+        <Text style={styles.servHeader2}>
+          Our clinic was founded over 80 years ago and excels in the science of veterinary medicine
+          and delivers compassionate, quality veterinary care.
+        </Text>
       </Pressable>
 
       {/* </DropShadow> */}
