@@ -14,6 +14,60 @@ import dstyles, {
 import PawPostComment from './PawPostComment';
 
 const miso = require('../../assets/petPhotos/miso.jpg');
+const bowser = require('../../assets/petPhotos/bowser.jpg');
+const cookie = require('../../assets/petPhotos/cookie.jpg');
+const eve = require('../../assets/petPhotos/eve.jpg');
+const ginger = require('../../assets/petPhotos/ginger.jpg');
+const luna = require('../../assets/petPhotos/luna.jpg');
+const mugen = require('../../assets/petPhotos/mugen.jpg');
+const suki = require('../../assets/petPhotos/suki.jpg');
+const stark = require('../../assets/petPhotos/stark.jpg');
+const fury = require('../../assets/petPhotos/fury.jpg');
+
+function RandomPic() {
+  const maxNumber = 10;
+  const randomNumber = Math.floor((Math.random() * maxNumber) + 1);
+
+  if (randomNumber === 1) {
+    return miso;
+  }
+
+  if (randomNumber === 2) {
+    return bowser;
+  }
+
+  if (randomNumber === 3) {
+    return cookie;
+  }
+
+  if (randomNumber === 4) {
+    return eve;
+  }
+
+  if (randomNumber === 5) {
+    return ginger;
+  }
+
+  if (randomNumber === 6) {
+    return luna;
+  }
+
+  if (randomNumber === 7) {
+    return mugen;
+  }
+
+  if (randomNumber === 8) {
+    return suki;
+  }
+
+  if (randomNumber === 9) {
+    return stark;
+  }
+
+  if (randomNumber === 10) {
+    return fury;
+  }
+}
 
 export default function ProfilePhotoCard() {
   const [styles, setStyles] = useState(lstyles);
@@ -34,7 +88,7 @@ export default function ProfilePhotoCard() {
       <Pressable onPress={togglePic}>
         <Image
           style={styles.photoingrid}
-          source={miso}
+          source={RandomPic()}
         />
       </Pressable>
 
