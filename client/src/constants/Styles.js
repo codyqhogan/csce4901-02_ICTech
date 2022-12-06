@@ -1437,9 +1437,9 @@ export default StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 10,
-    justifyContent: 'flex-start',
     alignSelf: 'center',
     backgroundColor: pawPink,
+    justifyContent: 'center',
   },
   oProfNameText: {
     fontSize: 15,
@@ -1449,6 +1449,7 @@ export default StyleSheet.create({
     color: pawWhite,
   },
   oProfBioText: {
+    textAlign: 'center',
     fontSize: 12,
     fontWeight: '600',
     letterSpacing: 1,

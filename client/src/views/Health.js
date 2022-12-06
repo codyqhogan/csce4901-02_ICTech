@@ -1,13 +1,18 @@
 import {
-  View, Dimensions, Animated, ScrollView,
+  View, Dimensions, Animated, ScrollView, Pressable, Text, Image,
 } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import RNAnimatedScrollIndicators from 'react-native-animated-scroll-indicators';
 import lstyles, { pawPink, pawWhite } from '../constants/Styles';
 import dstyles, { pawLightGrey, pawYellow } from '../constants/DarkStyles';
-import PetCard from '../components/PetCard';
+// import PetCard from '../components/PetCard';
 import HealthComponent from '../components/HealthComponent';
+
+const miso = require('../../assets/petPhotos/miso.jpg');
+const mugen = require('../../assets/petPhotos/mugen.jpg');
+const suki = require('../../assets/petPhotos/suki.jpg');
+const luna = require('../../assets/petPhotos/luna.jpg');
 
 export default function HealthTab() {
   const [styles, setStyles] = useState(lstyles);
@@ -52,10 +57,54 @@ export default function HealthTab() {
           }}
         >
 
+          {/* <PetCard />
           <PetCard />
           <PetCard />
-          <PetCard />
-          <PetCard />
+        <PetCard /> */}
+
+          <View style={styles.transparentBG}>
+            <Pressable style={styles.petCard}>
+              <Image
+                style={styles.petImage}
+                source={miso}
+              />
+              <Text style={styles.petHeader}>Miso</Text>
+
+            </Pressable>
+          </View>
+
+          <View style={styles.transparentBG}>
+            <Pressable style={styles.petCard}>
+              <Image
+                style={styles.petImage}
+                source={mugen}
+              />
+              <Text style={styles.petHeader}>Mugen</Text>
+
+            </Pressable>
+          </View>
+
+          <View style={styles.transparentBG}>
+            <Pressable style={styles.petCard}>
+              <Image
+                style={styles.petImage}
+                source={suki}
+              />
+              <Text style={styles.petHeader}>Suki</Text>
+
+            </Pressable>
+          </View>
+
+          <View style={styles.transparentBG}>
+            <Pressable style={styles.petCard}>
+              <Image
+                style={styles.petImage}
+                source={luna}
+              />
+              <Text style={styles.petHeader}>Luna</Text>
+
+            </Pressable>
+          </View>
         </Animated.ScrollView>
 
         <View style={styles.scrollIndicator}>

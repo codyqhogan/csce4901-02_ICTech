@@ -15,7 +15,7 @@ import dstyles, { pawLightGrey, pawYellow } from '../constants/DarkStyles';
 import AccountCard from '../components/AccountCard';
 import { reload } from '../redux/SettingsSlice';
 
-const miso = require('../../assets/petPhotos/miso.jpg');
+const profilepic = require('../../assets/petPhotos/profilepic.jpg');
 
 const StatusBarHeight = getStatusBarHeight();
 
@@ -63,7 +63,7 @@ export default function AccountTab() {
         <View style={styles.profileBorder}>
           <Image
             style={styles.profileImage}
-            source={miso}
+            source={profilepic}
           />
         </View>
       </View>
@@ -124,7 +124,7 @@ export default function AccountTab() {
               <Image
                 resizeMode="cover"
                 style={styles.profileIcon}
-                source={miso}
+                source={profilepic}
               />
               <Pressable>
                 <Feather

@@ -13,7 +13,7 @@ import dstyles, {
 import ProfilePhotoCard from '../components/ProfilePhotoCard';
 import ProfilePostCard from '../components/ProfilePostCard';
 
-const miso = require('../../assets/petPhotos/miso.jpg');
+const profilepic = require('../../assets/petPhotos/profilepic.jpg');
 
 export default function CommunityTab(bioUpdate) {
   const [styles, setStyles] = useState(lstyles);
@@ -44,7 +44,7 @@ export default function CommunityTab(bioUpdate) {
       <View style={styles.statusBar} />
       <Image
         style={styles.oProfileImage}
-        source={miso}
+        source={profilepic}
       />
       <Pressable
         onPress={toggleForumSettings}
@@ -62,17 +62,18 @@ export default function CommunityTab(bioUpdate) {
       </Pressable>
       <View style={styles.oProfileBio}>
         <Text style={styles.oProfBioText} numberOfLines={6}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fiat nulla paatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
-
+          Suki the Pyr 3.1.19
+          {'\n'}
+          Miso the Golden 2.14.20
+          {'\n'}
+          Mugen the German 7.18.20
+          {'\n'}
+          Luna the Husky 10.31.12
+          {'\n'}
         </Text>
       </View>
       <View style={styles.oProfileName}>
-        <Text style={styles.oProfNameText}>@user-name</Text>
+        <Text style={styles.oProfNameText}>@frontend</Text>
       </View>
       <View
         style={styles.profBottomBand}
