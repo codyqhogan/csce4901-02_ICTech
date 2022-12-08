@@ -1,0 +1,3 @@
+[submodule "server/secrets"]
+	path = server/secrets
+	url = https://github.com/johnsnoa/paw5-secrets.git
