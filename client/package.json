@@ -25,6 +25,7 @@
     "react-native-animated-scroll-indicators": "^1.0.1",
     "react-native-awesome-alerts": "^2.0.0",
     "react-native-dropdownalert": "^4.5.1",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-maps": "0.31.1",
     "react-native-modal": "^13.0.1",
     "react-native-status-bar-height": "^2.6.0",

@@ -3,17 +3,20 @@ import NetworkResponse from './NetworkResponse';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const API_ENDPOINT = 'https://www.paw-5.com/';
-
 interface Request {
   method: 'GET' | 'POST',
   host: string,
   options: AxiosRequestConfig,
+  body?: {},
 }
 
 class Network {
   request?: Request;
 
   response?: NetworkResponse;
+
+  public static instance: Network;
+
 
   get = async (host: string, options: AxiosRequestConfig) => {
     const loginToken = await AsyncStorage.getItem('@loginToken');
@@ -29,7 +32,7 @@ class Network {
       },
     };
     try {
-      const response = await axios.get(API_ENDPOINT + host, options);
+      const response = await axios.get(API_ENDPOINT + host, this.request.options);
       this.response = new NetworkResponse(response);
       return this.response;
     } catch(e) {
@@ -42,13 +45,21 @@ class Network {
   };
 
   post = async (host: string, body: {}, options: AxiosRequestConfig) => {
+    const loginToken = await AsyncStorage.getItem('@loginToken');
     this.request = {
       method: 'POST',
       host,
-      options,
+      options: {
+        headers: {
+          Authorization: loginToken ? `Bearer ${loginToken}` : undefined,
+          ...options.headers,
+        },
+        ...options,
+      },
+      body
     };
     try {
-      const response = await axios.post(API_ENDPOINT + host, body, options);
+      const response = await axios.post(API_ENDPOINT + host, body, this.request.options);
       this.response = new NetworkResponse(response);
     return this.response;
     } catch(e) {
@@ -59,6 +70,12 @@ class Network {
       throw e;
     }
   };
+
+  static getInstance = () => {
+    if (Network.instance) return Network.instance;
+    Network.instance = new Network();
+    return Network.instance;
+  }
 }
 
-export default Network;
+export default Network.getInstance;
