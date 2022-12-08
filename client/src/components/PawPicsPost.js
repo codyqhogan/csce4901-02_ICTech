@@ -25,6 +25,32 @@ const suki = require('../../assets/petPhotos/suki.jpg');
 const stark = require('../../assets/petPhotos/stark.jpg');
 const fury = require('../../assets/petPhotos/fury.jpg');
 
+const greenPic = require('../../assets/petPhotos/greenpfp.png');
+const greyPic = require('../../assets/petPhotos/greypfp.png');
+const pinkPic = require('../../assets/petPhotos/pinkpfp.png');
+const yellowPic = require('../../assets/petPhotos/yellowpfp.png');
+
+function RandomPFPic() {
+  const maxNumber = 10;
+  const randomNumber = Math.floor((Math.random() * maxNumber) + 1);
+
+  if (randomNumber === 1) {
+    return greenPic;
+  }
+
+  if (randomNumber === 2) {
+    return greyPic;
+  }
+
+  if (randomNumber === 3) {
+    return pinkPic;
+  }
+
+  if (randomNumber === 4) {
+    return yellowPic;
+  }
+}
+
 function RandomPic() {
   const maxNumber = 10;
   const randomNumber = Math.floor((Math.random() * maxNumber) + 1);
@@ -114,7 +140,7 @@ export default function PawPostPost() {
         <Pressable style={styles.ppProfileImageHolder} onPress={toggleProfile}>
           <Image
             style={styles.ppProfileImage}
-            source={RandomPic()}
+            source={RandomPFPic()}
           />
         </Pressable>
         <Text style={[styles.picDescription, { left: 2, top: 220 }]}>Descriptive Text</Text>
