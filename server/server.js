@@ -22,9 +22,9 @@ app.use(bodyParser.json());
 
 // Initialize SSL certificate for HTTPS connections
 https.createServer({
-  key: fs.readFileSync('./key.pem'),
-  cert: fs.readFileSync('./cert.pem'),
-  ca: fs.readFileSync('./ca.pem'),
+  key: fs.readFileSync('./secrets/key.pem'),
+  cert: fs.readFileSync('./secrets/cert.pem'),
+  ca: fs.readFileSync('./secrets/ca.pem'),
 }, app).listen(443, () => {
   console.log('server is running on port 3001');
 });
