@@ -14,11 +14,14 @@
     "mysql2": "^2.3.3"
   },
   "scripts": {
-    "mkdir": "find . -type d -not -path './node_modules/*' -a ! -name '.' | xargs -I% ssh -i ~/.ssh/paw5-kp.pem ubuntu@ec2-3-209-131-148.compute-1.amazonaws.com 'mkdir -p ~/capstone/server/%'",
-    "scp": "find . -type f -not -path './node_modules/*' -a -name '*.js' | xargs -I% scp -i ~/.ssh/paw5-kp.pem % ubuntu@3.209.131.148:~/capstone/server/%",
+    "mkdir": "ssh -i ~/.ssh/paw5-kp.pem ubuntu@ec2-3-209-131-148.compute-1.amazonaws.com 'mkdir -p ~/capstone/server'",
+    "compress": "tar --exclude node_modules -czf archive.tar.gz *",
+    "scp": "scp -i ~/.ssh/paw5-kp.pem archive.tar.gz ubuntu@3.209.131.148:~/capstone/server/server.tar.gz",
+    "decompress": "ssh -i ~/.ssh/paw5-kp.pem ubuntu@3.209.131.148 'tar -xf ~/capstone/server/server.tar.gz'",
+    "rmarchive": "rm archive.tar.gz",
     "scp:pjs": "scp -i ~/.ssh/paw5-kp.pem package.json ubuntu@3.209.131.148:~/capstone/server/package.json",
     "service": "ssh -i ~/.ssh/paw5-kp.pem ubuntu@ec2-3-209-131-148.compute-1.amazonaws.com 'cd ~/capstone/server; npm i; sudo systemctl restart paw5.service'",
-    "deploy": "npm run mkdir && npm run scp && npm run scp:pjs && npm run service",
+    "deploy": "npm-run-all mkdir compress scp decompress service rmarchive",
     "start": "node server.js",
     "test": "NODE_ENV=test jest --watchAll"
   },
@@ -34,7 +37,8 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^29.3.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5"
   },
   "keywords": [],
   "author": "",
