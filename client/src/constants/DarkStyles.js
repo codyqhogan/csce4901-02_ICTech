@@ -1411,7 +1411,7 @@ export default StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 10,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignSelf: 'center',
     backgroundColor: pawLightGrey,
   },
@@ -1429,6 +1429,7 @@ export default StyleSheet.create({
     letterSpacing: 1,
     fontFamily: 'QuicksandBold',
     color: pawYellow,
+    textAlign: 'center',
   },
   scrollIndicatorProfile: {
     marginTop: -45,
