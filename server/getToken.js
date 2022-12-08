@@ -2,7 +2,7 @@ const base64 = require('base-64');
 const jwt = require('jsonwebtoken');
 const login = require('./login');
 
-require('dotenv').config();
+require('dotenv').config({ path: `${__dirname}/secrets/.env` });
 
 async function getTokenFromBasicAuthorization(authorization) {
   if (!authorization.match(/Basic .+/)) return '';

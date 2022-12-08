@@ -20,7 +20,7 @@ if (!fs.existsSync('./secrets/key.pem')) {
 // library for creating server
 const app = express();
 
-dotenv.config();
+dotenv.config({ path: `${__dirname}/secrets/.env` });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

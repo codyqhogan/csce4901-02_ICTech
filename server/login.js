@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const connection = require('./connection');
 
-require('dotenv').config();
+require('dotenv').config({ path: `${__dirname}/secrets/.env` });
 
 const saltRounds = 10;
 
