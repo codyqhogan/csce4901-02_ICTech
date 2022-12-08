@@ -17,7 +17,7 @@ const pinkPic = require('../../assets/petPhotos/pinkpfp.png');
 const yellowPic = require('../../assets/petPhotos/yellowpfp.png');
 
 function RandomPFPic() {
-  const maxNumber = 10;
+  const maxNumber = 4;
   const randomNumber = Math.floor((Math.random() * maxNumber) + 1);
 
   if (randomNumber === 1) {

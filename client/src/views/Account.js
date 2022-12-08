@@ -15,7 +15,7 @@ import dstyles, { pawLightGrey, pawYellow } from '../constants/DarkStyles';
 import AccountCard from '../components/AccountCard';
 import { reload } from '../redux/SettingsSlice';
 
-const profilepic = require('../../assets/petPhotos/pinkpfp.jpg');
+const profilepic = require('../../assets/petPhotos/pinkpfp.png');
 
 const StatusBarHeight = getStatusBarHeight();
 

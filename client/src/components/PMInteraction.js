@@ -10,7 +10,31 @@ import dstyles, { pawLightGrey, pawYellow } from '../constants/DarkStyles';
 import MessageSent from './MessageSent';
 import MessageReceived from './MessageReceived';
 
-const miso = require('../../assets/petPhotos/miso.jpg');
+const greenPic = require('../../assets/petPhotos/greenpfp.png');
+const greyPic = require('../../assets/petPhotos/greypfp.png');
+const pinkPic = require('../../assets/petPhotos/pinkpfp.png');
+const yellowPic = require('../../assets/petPhotos/yellowpfp.png');
+
+function RandomPFPic() {
+  const maxNumber = 4;
+  const randomNumber = Math.floor((Math.random() * maxNumber) + 1);
+
+  if (randomNumber === 1) {
+    return greenPic;
+  }
+
+  if (randomNumber === 2) {
+    return greyPic;
+  }
+
+  if (randomNumber === 3) {
+    return pinkPic;
+  }
+
+  if (randomNumber === 4) {
+    return yellowPic;
+  }
+}
 
 export default function PMUserInteraction(replyText) {
   const [styles, setStyles] = useState(lstyles);
@@ -33,7 +57,7 @@ export default function PMUserInteraction(replyText) {
       <Pressable onPress={toggleMessage} style={styles.pmUserInteraction}>
         <Image
           style={styles.pmUserImage}
-          source={miso}
+          source={RandomPFPic()}
         />
         <View style={styles.pmPreview}>
           <Text style={styles.pmUserPreview}>
@@ -86,7 +110,7 @@ export default function PMUserInteraction(replyText) {
 
             <Image
               style={styles.messageProfileIcon}
-              source={miso}
+              source={RandomPFPic()}
             />
           </View>
 
