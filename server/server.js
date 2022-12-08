@@ -11,6 +11,12 @@ const { getToken } = require('./getToken');
 const login = require('./login');
 const ResponseErrors = require('./ResponseErrors');
 
+if (!fs.existsSync('./secrets/key.pem')) {
+  console.log('Could not find certificates. Did you initialize your submodule?');
+  console.log('git submodule update --init secrets');
+  process.exit(1);
+}
+
 // library for creating server
 const app = express();
 
