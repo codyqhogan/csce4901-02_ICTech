@@ -15,7 +15,7 @@ import dstyles, { pawLightGrey, pawYellow } from '../constants/DarkStyles';
 import AccountCard from '../components/AccountCard';
 import { reload } from '../redux/SettingsSlice';
 
-const profilepic = require('../../assets/petPhotos/profilepic.jpg');
+const profilepic = require('../../assets/petPhotos/pinkpfp.jpg');
 
 const StatusBarHeight = getStatusBarHeight();
 
@@ -74,7 +74,7 @@ export default function AccountTab() {
           numberOfLines={1}
           style={[styles.menuText, styles.usernameFont]}
         >
-          UserName
+          @codyqhogan
         </Text>
       </View>
 
