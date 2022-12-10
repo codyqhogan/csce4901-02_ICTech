@@ -1,0 +1,49 @@
+{
+  "name": "ic-tech-4901",
+  "version": "0.0.0",
+  "main": "src/views/App.js",
+  "scripts": {
+    "start": "expo start --port 8888",
+    "android": "expo start --android --port 8888",
+    "ios": "expo start --ios --port 8888",
+    "web": "expo start --web --port 8888"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
+    "@react-native-async-storage/async-storage": "~1.17.3",
+    "@react-navigation/bottom-tabs": "^6.4.0",
+    "@react-navigation/native": "^6.0.13",
+    "@reduxjs/toolkit": "^1.9.0",
+    "@types/react-native": "~0.69.1",
+    "axios": "^1.2.0",
+    "base-64": "^1.0.0",
+    "expo": "^46.0.0",
+    "expo-font": "~10.2.0",
+    "expo-location": "~14.3.0",
+    "react": "18.0.0",
+    "react-native": "0.69.6",
+    "react-native-animated-scroll-indicators": "^1.0.1",
+    "react-native-awesome-alerts": "^2.0.0",
+    "react-native-dropdownalert": "^4.5.1",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-maps": "0.31.1",
+    "react-native-modal": "^13.0.1",
+    "react-native-status-bar-height": "^2.6.0",
+    "react-redux": "^8.0.5",
+    "typescript": "^4.6.3",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "peerDependencies": {
+    "shell-quote": "^1.7.1"
+  },
+  "private": true
+}
